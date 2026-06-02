@@ -1,0 +1,245 @@
+.app-shell {
+  min-height: 100vh;
+  padding: 0;
+  background:
+    linear-gradient(180deg, #062b1d 0%, #0f3d29 40%, #163c2c 100%);
+}
+
+.app-main {
+  width: 100%;
+  padding: 12px;
+  display: grid;
+  gap: 14px;
+}
+
+.navbar {
+  width: 100%;
+  padding: 0;
+  border-bottom: 1px solid rgba(188, 234, 205, 0.22);
+  background: rgba(4, 25, 16, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  color: #eafff1;
+}
+
+.navbar h2 {
+  font-size: 1.05rem;
+  color: #eafff1;
+  margin: 0;
+}
+
+.hero-panel,
+.panel,
+.status-card {
+  border: 1px solid rgba(188, 234, 205, 0.18);
+  background: rgba(6, 33, 22, 0.92);
+  color: #effff4;
+}
+
+.hero-panel {
+  min-height: calc(100vh - 84px);
+  padding: 24px;
+  background:
+    radial-gradient(circle at top right, rgba(102, 190, 122, 0.18), transparent 30%),
+    linear-gradient(135deg, rgba(8, 44, 28, 0.96), rgba(13, 61, 39, 0.94));
+  display: grid;
+  align-content: center;
+  gap: 16px;
+}
+
+.hero-panel h1 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1.1;
+  color: #f3fff6;
+  max-width: 10ch;
+}
+
+.hero-copy {
+  max-width: 44rem;
+  color: #cbe8d2;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.panel {
+  padding: 16px;
+}
+
+.form-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.field-stack {
+  display: grid;
+  gap: 10px;
+}
+
+.field-stack label {
+  color: #d8f5df;
+  font-weight: 600;
+}
+
+.field-row {
+  display: flex;
+  gap: 12px;
+}
+
+input {
+  width: 100%;
+  border: 1px solid rgba(188, 234, 205, 0.22);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font: inherit;
+  color: #effff4;
+  background: rgba(3, 16, 10, 0.72);
+}
+
+input:focus {
+  outline: 2px solid #8ee3a9;
+  outline-offset: 2px;
+}
+
+button {
+  border: 1px solid rgba(188, 234, 205, 0.2);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #1f6b43, #4ea96a);
+  color: #f3fff6;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2a7c4e, #65bc7f);
+}
+
+.form-panel button {
+  min-width: 120px;
+}
+
+.status-card {
+  padding: 16px;
+  color: #effff4;
+  font-weight: 600;
+}
+
+.status-error {
+  border-color: rgba(255, 131, 131, 0.4);
+  color: #ffd8d8;
+}
+
+.todo-panel {
+  min-height: 160px;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.panel-header h2,
+.empty-panel h2 {
+  color: #f3fff6;
+  font-size: 1.1rem;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid rgba(188, 234, 205, 0.12);
+  background: rgba(3, 18, 11, 0.66);
+}
+
+.todo-check {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+  color: #effff4;
+  font-weight: 600;
+}
+
+.todo-check input {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  accent-color: #111111;
+  box-shadow: none;
+}
+
+.todo-check span {
+  word-break: break-word;
+}
+
+.todo-item.done .todo-check span {
+  color: #9fceb1;
+  text-decoration: line-through;
+}
+
+.delete-button {
+  color: #effff4;
+  background: linear-gradient(135deg, #a33a3a, #d05f5f);
+}
+
+.empty-panel {
+  display: grid;
+  place-items: start;
+}
+
+@media (max-width: 860px) {
+  .app-main {
+    padding: 12px;
+  }
+
+  .hero-panel {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .controls-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field-row,
+  .panel-header,
+  .todo-item,
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navbar-actions {
+    justify-content: flex-start;
+  }
+
+  .field-row button,
+  .delete-button,
+  .form-panel button {
+    width: 100%;
+  }
+}
+
